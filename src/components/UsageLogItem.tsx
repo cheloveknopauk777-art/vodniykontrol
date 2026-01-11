@@ -21,7 +21,7 @@ const UsageLogItem = ({ time, amount, type, trend = "neutral" }: UsageLogItemPro
       
       <div className="flex-1">
         <p className={`font-medium ${isDaily ? "text-foreground" : "text-muted-foreground"}`}>
-          {isDaily ? "Daily Total" : "Water Dispensed"}
+          {isDaily ? "Итого за день" : "Налито воды"}
         </p>
         <p className="text-sm text-muted-foreground">{time}</p>
       </div>

@@ -8,7 +8,7 @@ const DevicePage = () => {
   const [devices] = useState([
     {
       id: "1",
-      name: "Living Room",
+      name: "Гостиная",
       model: "AquaSync Pro X1",
       waterLevel: 72,
       isConnected: true,
@@ -16,7 +16,7 @@ const DevicePage = () => {
     },
     {
       id: "2",
-      name: "Office",
+      name: "Офис",
       model: "AquaSync Mini",
       waterLevel: 45,
       isConnected: true,
@@ -25,11 +25,11 @@ const DevicePage = () => {
   ]);
 
   const handleAddDevice = () => {
-    toast.info("Scanning for nearby devices...");
+    toast.info("Поиск устройств поблизости...");
   };
 
   const handleDeviceClick = (deviceId: string) => {
-    toast.info(`Opening device ${deviceId} settings...`);
+    toast.info(`Открываем настройки устройства...`);
   };
 
   return (
@@ -38,15 +38,15 @@ const DevicePage = () => {
       <div className="px-6 pt-12 pb-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-foreground">My Devices</h1>
-            <p className="text-muted-foreground">{devices.length} coolers connected</p>
+            <h1 className="text-2xl font-bold text-foreground">Мои устройства</h1>
+            <p className="text-muted-foreground">{devices.length} кулера подключено</p>
           </div>
           <Button 
             onClick={handleAddDevice}
             className="water-gradient text-primary-foreground shadow-button hover:shadow-glow"
           >
             <Plus className="w-4 h-4 mr-2" />
-            Add
+            Добавить
           </Button>
         </div>
       </div>
@@ -76,7 +76,7 @@ const DevicePage = () => {
         <div className="glass-card p-5 animate-fade-in" style={{ animationDelay: "300ms" }}>
           <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
             <HelpCircle className="w-5 h-5 text-primary" />
-            How to Connect a New Cooler
+            Как подключить новый кулер
           </h3>
           
           <div className="space-y-4">
@@ -85,9 +85,9 @@ const DevicePage = () => {
                 <span className="text-sm font-bold text-primary">1</span>
               </div>
               <div>
-                <p className="font-medium text-foreground">Power on your cooler</p>
+                <p className="font-medium text-foreground">Включите кулер</p>
                 <p className="text-sm text-muted-foreground">
-                  The LED will blink blue when ready to pair
+                  LED будет мигать синим, когда устройство готово к сопряжению
                 </p>
               </div>
             </div>
@@ -97,9 +97,9 @@ const DevicePage = () => {
                 <Bluetooth className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <p className="font-medium text-foreground">Enable Bluetooth</p>
+                <p className="font-medium text-foreground">Включите Bluetooth</p>
                 <p className="text-sm text-muted-foreground">
-                  We'll use BLE to discover your device
+                  Мы используем BLE для обнаружения устройства
                 </p>
               </div>
             </div>
@@ -109,9 +109,9 @@ const DevicePage = () => {
                 <Wifi className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <p className="font-medium text-foreground">Connect to Wi-Fi</p>
+                <p className="font-medium text-foreground">Подключите к Wi-Fi</p>
                 <p className="text-sm text-muted-foreground">
-                  Enter your network credentials for remote access
+                  Введите данные сети для удалённого доступа
                 </p>
               </div>
             </div>
