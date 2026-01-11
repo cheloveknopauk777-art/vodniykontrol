@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 interface WaterTankProps {
-  level: number; // 0-100
+  level: number;
   className?: string;
 }
 
@@ -77,7 +77,7 @@ const WaterTank = ({ level, className = "" }: WaterTankProps) => {
           <span className="text-2xl font-semibold text-muted-foreground">%</span>
         </div>
         <p className="text-muted-foreground mt-1 font-medium">
-          ~{Math.round((animatedLevel / 100) * 19)}L remaining
+          ~{Math.round((animatedLevel / 100) * 19)}л осталось
         </p>
       </div>
     </div>

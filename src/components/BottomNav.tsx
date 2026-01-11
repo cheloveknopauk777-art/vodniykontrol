@@ -2,11 +2,11 @@ import { Home, Droplets, ShoppingCart, BarChart3, Settings } from "lucide-react"
 import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { icon: Home, label: "Home", path: "/" },
-  { icon: Droplets, label: "Device", path: "/device" },
-  { icon: ShoppingCart, label: "Order", path: "/order" },
-  { icon: BarChart3, label: "History", path: "/history" },
-  { icon: Settings, label: "Settings", path: "/settings" },
+  { icon: Home, label: "Главная", path: "/" },
+  { icon: Droplets, label: "Устройства", path: "/device" },
+  { icon: ShoppingCart, label: "Заказ", path: "/order" },
+  { icon: BarChart3, label: "История", path: "/history" },
+  { icon: Settings, label: "Настройки", path: "/settings" },
 ];
 
 const BottomNav = () => {

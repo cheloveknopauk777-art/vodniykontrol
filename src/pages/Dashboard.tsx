@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingCart, History, RefreshCw, Bell } from "lucide-react";
+import { ShoppingCart, History } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import WaterTank from "@/components/WaterTank";
 import ConnectionStatus from "@/components/ConnectionStatus";
@@ -14,7 +14,7 @@ const Dashboard = () => {
   const [autoReplenish, setAutoReplenish] = useState(true);
 
   const handleOrderNow = () => {
-    toast.success("Redirecting to order page...");
+    toast.success("Переходим к заказу...");
     navigate("/order");
   };
 
@@ -28,12 +28,9 @@ const Dashboard = () => {
       <div className="px-6 pt-12 pb-6">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <p className="text-muted-foreground font-medium">Good morning! 👋</p>
+            <p className="text-muted-foreground font-medium">Доброе утро! 👋</p>
             <h1 className="text-2xl font-bold text-foreground">AquaSync</h1>
           </div>
-          <button className="w-10 h-10 rounded-full bg-card flex items-center justify-center shadow-card">
-            <Bell className="w-5 h-5 text-muted-foreground" />
-          </button>
         </div>
       </div>
 
@@ -51,7 +48,7 @@ const Dashboard = () => {
           {waterLevel <= 25 && (
             <div className="mt-4 p-3 rounded-xl bg-warning/10 border border-warning/20">
               <p className="text-sm text-warning font-medium text-center">
-                ⚠️ Water level is low! Consider ordering soon.
+                ⚠️ Низкий уровень воды! Рекомендуем сделать заказ.
               </p>
             </div>
           )}
@@ -61,15 +58,15 @@ const Dashboard = () => {
         <div className="grid grid-cols-2 gap-4 animate-slide-up" style={{ animationDelay: "100ms" }}>
           <QuickActionCard
             icon={ShoppingCart}
-            title="Order Now"
-            description="Get water delivered"
+            title="Заказать воду"
+            description="Доставка до двери"
             onClick={handleOrderNow}
             variant="primary"
           />
           <QuickActionCard
             icon={History}
-            title="View History"
-            description="Track your usage"
+            title="История"
+            description="Статистика потребления"
             onClick={handleViewHistory}
           />
         </div>
@@ -80,33 +77,33 @@ const Dashboard = () => {
             enabled={autoReplenish} 
             onToggle={setAutoReplenish}
             threshold={20}
-            nextDelivery="Jan 20, 2026"
+            nextDelivery="20 января 2026"
           />
         </div>
 
         {/* Weekly Stats Preview */}
         <div className="glass-card p-5 animate-slide-up" style={{ animationDelay: "300ms" }}>
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-semibold text-foreground">This Week</h3>
+            <h3 className="font-semibold text-foreground">Эта неделя</h3>
             <button 
               onClick={handleViewHistory}
               className="text-sm text-primary font-medium hover:underline"
             >
-              See all
+              Подробнее
             </button>
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div className="text-center p-3 rounded-xl bg-secondary/50">
-              <p className="text-2xl font-bold text-primary">14.2L</p>
-              <p className="text-xs text-muted-foreground">Total Used</p>
+              <p className="text-2xl font-bold text-primary">14.2л</p>
+              <p className="text-xs text-muted-foreground">Всего</p>
             </div>
             <div className="text-center p-3 rounded-xl bg-secondary/50">
-              <p className="text-2xl font-bold text-foreground">2.0L</p>
-              <p className="text-xs text-muted-foreground">Daily Avg</p>
+              <p className="text-2xl font-bold text-foreground">2.0л</p>
+              <p className="text-xs text-muted-foreground">В среднем/день</p>
             </div>
             <div className="text-center p-3 rounded-xl bg-secondary/50">
               <p className="text-2xl font-bold text-success">+12%</p>
-              <p className="text-xs text-muted-foreground">vs Last Week</p>
+              <p className="text-xs text-muted-foreground">vs прошлая</p>
             </div>
           </div>
         </div>

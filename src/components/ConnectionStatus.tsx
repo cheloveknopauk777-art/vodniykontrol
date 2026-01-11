@@ -25,7 +25,7 @@ const ConnectionStatus = ({ isConnected, deviceName = "AquaSync Pro" }: Connecti
       <div>
         <p className="font-semibold text-foreground">{deviceName}</p>
         <p className={`text-sm font-medium ${isConnected ? "text-success" : "text-destructive"}`}>
-          {isConnected ? "Connected" : "Disconnected"}
+          {isConnected ? "Подключено" : "Отключено"}
         </p>
       </div>
     </div>

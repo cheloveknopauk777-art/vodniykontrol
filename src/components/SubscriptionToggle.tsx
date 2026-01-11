@@ -12,7 +12,7 @@ const SubscriptionToggle = ({
   enabled, 
   onToggle, 
   threshold = 20,
-  nextDelivery = "Jan 20, 2026"
+  nextDelivery = "20 января 2026"
 }: SubscriptionToggleProps) => {
   return (
     <div className="glass-card p-5">
@@ -22,8 +22,8 @@ const SubscriptionToggle = ({
             <RefreshCw className="w-5 h-5 text-accent" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Auto-Replenish</h3>
-            <p className="text-sm text-muted-foreground">Order when below {threshold}%</p>
+            <h3 className="font-semibold text-foreground">Автозаказ</h3>
+            <p className="text-sm text-muted-foreground">Заказ при уровне ниже {threshold}%</p>
           </div>
         </div>
         <Switch checked={enabled} onCheckedChange={onToggle} />
@@ -33,7 +33,7 @@ const SubscriptionToggle = ({
         <div className="flex items-center gap-2 pt-3 border-t border-border/50">
           <Calendar className="w-4 h-4 text-muted-foreground" />
           <p className="text-sm text-muted-foreground">
-            Next delivery: <span className="font-medium text-foreground">{nextDelivery}</span>
+            Следующая доставка: <span className="font-medium text-foreground">{nextDelivery}</span>
           </p>
         </div>
       )}

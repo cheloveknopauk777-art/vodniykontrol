@@ -1,4 +1,4 @@
-import { Droplets, Signal, Battery, ChevronRight } from "lucide-react";
+import { Droplets, Signal, ChevronRight } from "lucide-react";
 
 interface DeviceCardProps {
   name: string;
@@ -34,7 +34,7 @@ const DeviceCard = ({
               <div className="flex items-center gap-1">
                 <div className={`w-2 h-2 rounded-full ${isConnected ? "bg-success" : "bg-destructive"}`} />
                 <span className="text-xs text-muted-foreground">
-                  {isConnected ? "Online" : "Offline"}
+                  {isConnected ? "Онлайн" : "Офлайн"}
                 </span>
               </div>
               <div className="flex items-center gap-1">

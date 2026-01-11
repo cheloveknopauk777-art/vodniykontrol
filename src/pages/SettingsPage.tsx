@@ -45,15 +45,15 @@ const SettingsPage = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleLogout = () => {
-    toast.info("Logging out...");
+    toast.info("Выход из аккаунта...");
   };
 
   return (
     <div className="min-h-screen hero-gradient pb-24">
       {/* Header */}
       <div className="px-6 pt-12 pb-6">
-        <h1 className="text-2xl font-bold text-foreground">Settings</h1>
-        <p className="text-muted-foreground">Manage your account</p>
+        <h1 className="text-2xl font-bold text-foreground">Настройки</h1>
+        <p className="text-muted-foreground">Управление аккаунтом</p>
       </div>
 
       <div className="px-6 space-y-6">
@@ -64,9 +64,9 @@ const SettingsPage = () => {
               👤
             </div>
             <div>
-              <h2 className="font-bold text-lg text-foreground">Alex Johnson</h2>
+              <h2 className="font-bold text-lg text-foreground">Александр Иванов</h2>
               <p className="text-sm text-muted-foreground">alex@example.com</p>
-              <p className="text-xs text-primary font-medium mt-1">Premium Member</p>
+              <p className="text-xs text-primary font-medium mt-1">Премиум подписка</p>
             </div>
           </div>
         </div>
@@ -75,27 +75,27 @@ const SettingsPage = () => {
         <div className="glass-card overflow-hidden animate-slide-up" style={{ animationDelay: "100ms" }}>
           <div className="px-4 py-3 border-b border-border">
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-              Account
+              Аккаунт
             </h3>
           </div>
           <div className="p-1">
             <SettingItem
               icon={User}
-              title="Profile"
-              description="Edit your personal information"
-              onClick={() => toast.info("Opening profile...")}
+              title="Профиль"
+              description="Редактировать личные данные"
+              onClick={() => toast.info("Открываем профиль...")}
             />
             <SettingItem
               icon={CreditCard}
-              title="Payment Methods"
+              title="Способы оплаты"
               description="Visa •••• 4242"
-              onClick={() => toast.info("Opening payment methods...")}
+              onClick={() => toast.info("Открываем способы оплаты...")}
             />
             <SettingItem
               icon={MapPin}
-              title="Delivery Address"
-              description="123 Main St, San Francisco"
-              onClick={() => toast.info("Opening addresses...")}
+              title="Адрес доставки"
+              description="ул. Пушкина, д. 10, Москва"
+              onClick={() => toast.info("Открываем адреса...")}
             />
           </div>
         </div>
@@ -104,14 +104,14 @@ const SettingsPage = () => {
         <div className="glass-card overflow-hidden animate-slide-up" style={{ animationDelay: "200ms" }}>
           <div className="px-4 py-3 border-b border-border">
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-              Preferences
+              Настройки
             </h3>
           </div>
           <div className="p-1">
             <SettingItem
               icon={Bell}
-              title="Notifications"
-              description="Push notifications enabled"
+              title="Уведомления"
+              description="Push-уведомления включены"
               trailing={
                 <Switch 
                   checked={notifications} 
@@ -122,8 +122,8 @@ const SettingsPage = () => {
             />
             <SettingItem
               icon={Moon}
-              title="Dark Mode"
-              description="System default"
+              title="Тёмная тема"
+              description="По умолчанию системная"
               trailing={
                 <Switch 
                   checked={darkMode} 
@@ -134,9 +134,9 @@ const SettingsPage = () => {
             />
             <SettingItem
               icon={Smartphone}
-              title="Connected Devices"
-              description="2 coolers linked"
-              onClick={() => toast.info("Opening devices...")}
+              title="Подключённые устройства"
+              description="2 кулера"
+              onClick={() => toast.info("Открываем устройства...")}
             />
           </div>
         </div>
@@ -145,20 +145,20 @@ const SettingsPage = () => {
         <div className="glass-card overflow-hidden animate-slide-up" style={{ animationDelay: "300ms" }}>
           <div className="px-4 py-3 border-b border-border">
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-              Support
+              Поддержка
             </h3>
           </div>
           <div className="p-1">
             <SettingItem
               icon={HelpCircle}
-              title="Help Center"
-              description="FAQs and guides"
-              onClick={() => toast.info("Opening help center...")}
+              title="Центр помощи"
+              description="Часто задаваемые вопросы"
+              onClick={() => toast.info("Открываем помощь...")}
             />
             <SettingItem
               icon={Shield}
-              title="Privacy & Security"
-              onClick={() => toast.info("Opening privacy settings...")}
+              title="Конфиденциальность"
+              onClick={() => toast.info("Открываем настройки...")}
             />
           </div>
         </div>
@@ -170,7 +170,7 @@ const SettingsPage = () => {
           style={{ animationDelay: "400ms" }}
         >
           <LogOut className="w-5 h-5" />
-          <span className="font-medium">Log Out</span>
+          <span className="font-medium">Выйти</span>
         </button>
 
         {/* Version */}
