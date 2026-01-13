@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Plus, Bluetooth, Wifi, HelpCircle } from "lucide-react";
 import DeviceCard from "@/components/DeviceCard";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 
 const DevicePage = () => {
+  const navigate = useNavigate();
   const [devices] = useState([
     {
       id: "1",
@@ -25,11 +26,11 @@ const DevicePage = () => {
   ]);
 
   const handleAddDevice = () => {
-    toast.info("Поиск устройств поблизости...");
+    navigate("/device/add");
   };
 
   const handleDeviceClick = (deviceId: string) => {
-    toast.info(`Открываем настройки устройства...`);
+    navigate(`/device/${deviceId}`);
   };
 
   return (

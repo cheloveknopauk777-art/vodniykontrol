@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useTheme } from "next-themes";
 import { toast } from "sonner";
 
 interface SettingItemProps {
@@ -41,8 +43,14 @@ const SettingItem = ({ icon: Icon, title, description, onClick, trailing }: Sett
 );
 
 const SettingsPage = () => {
+  const navigate = useNavigate();
+  const { theme, setTheme } = useTheme();
   const [notifications, setNotifications] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
+  const isDarkMode = theme === "dark";
+
+  const handleToggleDarkMode = (checked: boolean) => {
+    setTheme(checked ? "dark" : "light");
+  };
 
   const handleLogout = () => {
     toast.info("Выход из аккаунта...");
@@ -83,19 +91,19 @@ const SettingsPage = () => {
               icon={User}
               title="Профиль"
               description="Редактировать личные данные"
-              onClick={() => toast.info("Открываем профиль...")}
+              onClick={() => navigate("/settings/profile")}
             />
             <SettingItem
               icon={CreditCard}
               title="Способы оплаты"
               description="Visa •••• 4242"
-              onClick={() => toast.info("Открываем способы оплаты...")}
+              onClick={() => navigate("/settings/profile")}
             />
             <SettingItem
               icon={MapPin}
               title="Адрес доставки"
               description="ул. Пушкина, д. 10, Москва"
-              onClick={() => toast.info("Открываем адреса...")}
+              onClick={() => navigate("/settings/profile")}
             />
           </div>
         </div>
@@ -123,11 +131,11 @@ const SettingsPage = () => {
             <SettingItem
               icon={Moon}
               title="Тёмная тема"
-              description="По умолчанию системная"
+              description={isDarkMode ? "Включена" : "Выключена"}
               trailing={
                 <Switch 
-                  checked={darkMode} 
-                  onCheckedChange={setDarkMode}
+                  checked={isDarkMode} 
+                  onCheckedChange={handleToggleDarkMode}
                   onClick={(e) => e.stopPropagation()}
                 />
               }
